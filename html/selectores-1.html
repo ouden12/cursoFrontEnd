@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de estilos</title>
+    <style>
+
+        
+        /*Especificidad de un id: (1, 0, 0, 0, 0)*/
+        p {
+            /*
+            background-color: black !important;
+            */
+        }
+        /*Especificidad de un id: (1, 0, 0)*/
+        #identificador {
+            background-color: pink;
+        }
+
+        /*Especificidad de una clase: (0, 1, 0)*/
+        .clase {
+            background-color: rgb(180, 43, 226);
+        }
+
+        /*Especificidad de en elemento: (0, 0, 1)*/
+        p {
+            background-color: rgb(85, 220, 213);
+        }
+
+        /*Especificidad de en elemento: (0, 0, 2)*/
+        div p {
+            background-color: rgb(226, 202, 43);
+        }
+
+        /*Especificidad de en elemento: (0, 1, 1)*/
+        div .clase {
+            background-color: rgb(226, 107, 43);
+        }
+
+        /*Especificidad de en elemento: (1, 1, 1)*/
+        #identi {
+            background-color: rgb(43, 98, 226);
+        }
+
+        /*Especificidad de en elemento: (0, 0, 1)*/
+        .clase2  {
+            background-color: rgb(220, 85, 85);
+        }
+
+    </style>
+</head>
+<body>
+    <head>encabezao</head>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="semantic.html">Semantic</a></li>
+            <li><a href="etiquetas.html">Etiquetas</a></li>
+            <li><a href="selectores-1.html">Selectores 1</a></li>
+        </ul>
+    </nav>
+    <section>
+        <!--    Especificidad de un id: (1, 0, 0, 0) -->
+        <p style="background-color: rgb(0, 255, 89);">Soy especificidad 1, 0, 0, 0</p>
+
+        <p id="identificador">Soy especificidad 1, 0, 0</p>
+        
+        <p class="clase">Soy especificidad 0, 1, 0</p>
+
+        <p>Soy especificidad 0, 0, 1</p>
+
+    </section>
+    <div>
+        <p>Soy especificidad 0, 0, 2</p>
+        
+        <p class="clase">Soy especificidad 0, 1, 1</p>
+
+        <div id="identi">
+
+            <section>
+                <p id="" class="clase2">qué soy</p>
+            </section>
+        </div>
+        
+    </div>
+</body>
+</html>
